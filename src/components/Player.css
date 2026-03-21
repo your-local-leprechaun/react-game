@@ -1,0 +1,7 @@
+.player {
+    width: 50px;
+    height: 25px;
+    background-color: royalblue;
+    position: fixed;
+    border-radius: 4px;
+}

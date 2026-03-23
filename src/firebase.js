@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit } from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDMyDYZu3iU9lsaJrD7HcHGQTrBn5rFXPE",
+    apiKey: "API_KEY_HERE",
     authDomain: "racer-b6526.firebaseapp.com",
     projectId: "racer-b6526",
     storageBucket: "racer-b6526.firebasestorage.app",

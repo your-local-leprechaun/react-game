@@ -1,18 +1,20 @@
-import { initializeApp } from 'firebase/app'
-import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit } from 'firebase/firestore'
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDMyDYZu3iU9lsaJrD7HcHGQTrBn5rFXPE",
-    authDomain: "racer-b6526.firebaseapp.com",
-    projectId: "racer-b6526",
-    storageBucket: "racer-b6526.firebasestorage.app",
-    messagingSenderId: "754563958926",
-    appId: "1:754563958926:web:9927056652ab3fb673a1df",
-    measurementId: "G-Q9K5FLNLFJ"
-}
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+};
 
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
 
 export const submitScore = async (name, distance) => {
     await addDoc(collection(db, 'scores'), {
